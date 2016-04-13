@@ -1,0 +1,220 @@
+<Project>
+  <Name>BLE Study</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Untitled</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Interface">
+        <Name>Entity</Name>
+        <Access>Public</Access>
+        <Location left="29" top="47" />
+        <Size width="162" height="124" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">string Name { get; set; }</Member>
+        <Member type="Property">Guid Id { get; set; }</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>Task</Name>
+        <Access>Public</Access>
+        <Location left="29" top="261" />
+        <Size width="162" height="196" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public string Name</Member>
+        <Member type="Field">List&lt;Rule&gt; rules</Member>
+        <Member type="Field">List&lt;Action&gt; actions</Member>
+        <Member type="Field">List&lt;Beacon&gt; beacons</Member>
+        <Member type="Method">public void onActivated()</Member>
+        <Member type="Method">public void onDeactivated()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Beacon</Name>
+        <Access>Public</Access>
+        <Location left="29" top="487" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public string Name</Member>
+        <Member type="Field">UUID Id</Member>
+        <Member type="Field">int Major</Member>
+        <Member type="Field">int Minor</Member>
+        <Member type="Field">int battery</Member>
+        <Member type="Method">public new void NewMethod()</Member>
+        <Member type="Event">public event EventHandler onEnter</Member>
+        <Member type="Event">public event EventHandler onLeave</Member>
+        <Member type="Event">public event EventHandler onStay</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Action</Name>
+        <Access>Public</Access>
+        <Location left="239" top="261" />
+        <Size width="162" height="133" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public string Name</Member>
+        <Member type="Field">ActionType type</Member>
+        <Member type="Method">public void perform()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Rule</Name>
+        <Access>Public</Access>
+        <Location left="410" top="226" />
+        <Size width="162" height="133" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public string Name</Member>
+        <Member type="Field">RuleType type</Member>
+        <Member type="Method">public bool isMatch()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>RuleTypes</Name>
+        <Access>Public</Access>
+        <Location left="779" top="169" />
+        <Size width="162" height="111" />
+        <Collapsed>False</Collapsed>
+        <Value>Time</Value>
+        <Value>Location</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>Location</Name>
+        <Access>Public</Access>
+        <Location left="410" top="367" />
+        <Size width="162" height="169" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public string Name</Member>
+        <Member type="Method">public bool InRange()</Member>
+        <Member type="Property">public int Radius { get; set; }</Member>
+        <Member type="Event">public event EventHandler onEnter</Member>
+        <Member type="Event">public event EventHandler onLeave</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Time</Name>
+        <Access>Public</Access>
+        <Location left="779" top="441" />
+        <Size width="162" height="213" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public string Name</Member>
+        <Member type="Field">long time</Member>
+        <Member type="Method">public bool InRange()</Member>
+        <Member type="Property">public int Threshold { get; set; }</Member>
+        <Member type="Property">public int TimeTypes { get; set; }</Member>
+        <Member type="Event">public event EventHandler onEnter</Member>
+        <Member type="Event">public event EventHandler onLeave</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>TimeTypes</Name>
+        <Access>Public</Access>
+        <Location left="779" top="287" />
+        <Size width="162" height="146" />
+        <Collapsed>False</Collapsed>
+        <Value>DayOfWeek</Value>
+        <Value>TimeOfDay</Value>
+        <Value>WeekOfMonth</Value>
+        <Value>StartTime</Value>
+        <Value>EndTime</Value>
+      </Entity>
+      <Entity type="Enum">
+        <Name>ActionTypes</Name>
+        <Access>Public</Access>
+        <Location left="779" top="47" />
+        <Size width="162" height="112" />
+        <Collapsed>False</Collapsed>
+        <Value>Message</Value>
+        <Value>PhoneCall</Value>
+        <Value>Wifi</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>Main</Name>
+        <Access>Public</Access>
+        <Location left="239" top="47" />
+        <Size width="207" height="150" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List&lt;Task&gt; tasks</Member>
+        <Member type="Field">Preference preference</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Preference</Name>
+        <Access>Public</Access>
+        <Location left="579" top="226" />
+        <Size width="162" height="181" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public string Name</Member>
+        <Member type="Field">int check_interval</Member>
+        <Member type="Field">bool useGPS</Member>
+        <Member type="Field">int stay_interval</Member>
+        <Member type="Method">public void Load()</Member>
+        <Member type="Method">public void Save()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Delegate">
+        <Name>onActivated</Name>
+        <Access>Public</Access>
+        <Location left="239" top="550" />
+        <Size width="162" height="66" />
+        <Collapsed>False</Collapsed>
+        <ReturnType>void</ReturnType>
+      </Entity>
+      <Entity type="Delegate">
+        <Name>onDeactivated</Name>
+        <Access>Public</Access>
+        <Location left="239" top="630" />
+        <Size width="162" height="61" />
+        <Collapsed>False</Collapsed>
+        <ReturnType>void</ReturnType>
+      </Entity>
+      <Entity type="Delegate">
+        <Name>onUpdated</Name>
+        <Access>Public</Access>
+        <Location left="239" top="707" />
+        <Size width="162" height="66" />
+        <Collapsed>False</Collapsed>
+        <ReturnType>void</ReturnType>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Realization" first="2" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="1" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="1" second="10">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>231</X>
+          <Y>222</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="2" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="11" second="10">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>515</X>
+          <Y>124</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
